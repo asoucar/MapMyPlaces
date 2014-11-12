@@ -1,25 +1,125 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JOE-AB-F0O">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="MainVC" customModule="MapMyPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bkd-P6-wFQ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="My Places" id="enT-p0-gYh">
+                                        <barButtonItem key="leftBarButtonItem" title="All Places" id="2eu-TO-Pz8">
+                                            <connections>
+                                                <segue destination="JOE-AB-F0O" kind="show" id="0Y1-Wr-R6A"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Find Me" id="bfH-92-wRC">
+                                            <connections>
+                                                <action selector="findMe:" destination="vXZ-lx-hvc" id="QsP-bQ-cLG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hgw-R2-16h">
+                                <rect key="frame" x="0.0" y="64" width="320" height="506"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="hgw-R2-16h" secondAttribute="bottom" id="40P-On-Qid"/>
+                            <constraint firstItem="Bkd-P6-wFQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="F3O-xw-zUH"/>
+                            <constraint firstAttribute="centerX" secondItem="Bkd-P6-wFQ" secondAttribute="centerX" id="GFn-qY-zIh"/>
+                            <constraint firstAttribute="trailing" secondItem="hgw-R2-16h" secondAttribute="trailing" id="N6P-Pt-kB6"/>
+                            <constraint firstAttribute="centerX" secondItem="hgw-R2-16h" secondAttribute="centerX" id="Ohi-5V-4u5"/>
+                            <constraint firstItem="hgw-R2-16h" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ozb-US-MA5"/>
+                            <constraint firstAttribute="trailing" secondItem="Bkd-P6-wFQ" secondAttribute="trailing" id="QMh-pK-MMj"/>
+                            <constraint firstItem="hgw-R2-16h" firstAttribute="top" secondItem="Bkd-P6-wFQ" secondAttribute="bottom" id="pnA-Mg-4cK"/>
+                        </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myMap" destination="hgw-R2-16h" id="Nmy-w9-HSc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-297" y="426"/>
+        </scene>
+        <!--My Places-->
+        <scene sceneID="fbO-CD-vto">
+            <objects>
+                <tableViewController id="Lag-Te-fhS" customClass="TableVC" customModule="MapMyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yzF-B3-CZu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="FS7-T0-TF7">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FS7-T0-TF7" id="Zjo-0Q-FoM">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lag-Te-fhS" id="j1o-yf-SVZ"/>
+                            <outlet property="delegate" destination="Lag-Te-fhS" id="fGv-X3-XDX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Places" id="QaO-DF-Jsp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T5V-RQ-Bff">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="show" identifier="addPlace" id="SSw-Db-GtM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="findPlace" id="bCA-hn-RRk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UAb-Bm-C1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539" y="52"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zk5-Rq-Z6C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JOE-AB-F0O" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UgS-gE-BLj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Lag-Te-fhS" kind="relationship" relationship="rootViewController" id="y7g-zy-lIk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2e-kd-ik5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="-290"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SSw-Db-GtM"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		AB0E2DCB1A13DA8E00609E26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E2DCA1A13DA8E00609E26 /* AppDelegate.swift */; };
 		AB0E2DCE1A13DA8E00609E26 /* MapMyPlaces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0E2DCC1A13DA8E00609E26 /* MapMyPlaces.xcdatamodeld */; };
-		AB0E2DD01A13DA8E00609E26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E2DCF1A13DA8E00609E26 /* ViewController.swift */; };
+		AB0E2DD01A13DA8E00609E26 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E2DCF1A13DA8E00609E26 /* MainVC.swift */; };
 		AB0E2DD31A13DA8E00609E26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0E2DD11A13DA8E00609E26 /* Main.storyboard */; };
 		AB0E2DD51A13DA8E00609E26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0E2DD41A13DA8E00609E26 /* Images.xcassets */; };
 		AB0E2DD81A13DA8E00609E26 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0E2DD61A13DA8E00609E26 /* LaunchScreen.xib */; };
 		AB0E2DE41A13DA8E00609E26 /* MapMyPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E2DE31A13DA8E00609E26 /* MapMyPlacesTests.swift */; };
+		AB0E2DEE1A13DCB000609E26 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0E2DED1A13DCB000609E26 /* TableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +32,14 @@
 		AB0E2DC91A13DA8E00609E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB0E2DCA1A13DA8E00609E26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB0E2DCD1A13DA8E00609E26 /* MapMyPlaces.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapMyPlaces.xcdatamodel; sourceTree = "<group>"; };
-		AB0E2DCF1A13DA8E00609E26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB0E2DCF1A13DA8E00609E26 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		AB0E2DD21A13DA8E00609E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB0E2DD41A13DA8E00609E26 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AB0E2DD71A13DA8E00609E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AB0E2DDD1A13DA8E00609E26 /* MapMyPlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapMyPlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0E2DE21A13DA8E00609E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB0E2DE31A13DA8E00609E26 /* MapMyPlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMyPlacesTests.swift; sourceTree = "<group>"; };
+		AB0E2DED1A13DCB000609E26 /* TableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				AB0E2DCA1A13DA8E00609E26 /* AppDelegate.swift */,
-				AB0E2DCF1A13DA8E00609E26 /* ViewController.swift */,
+				AB0E2DCF1A13DA8E00609E26 /* MainVC.swift */,
 				AB0E2DD11A13DA8E00609E26 /* Main.storyboard */,
+				AB0E2DED1A13DCB000609E26 /* TableVC.swift */,
 				AB0E2DD41A13DA8E00609E26 /* Images.xcassets */,
 				AB0E2DD61A13DA8E00609E26 /* LaunchScreen.xib */,
 				AB0E2DCC1A13DA8E00609E26 /* MapMyPlaces.xcdatamodeld */,
@@ -215,7 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0E2DD01A13DA8E00609E26 /* ViewController.swift in Sources */,
+				AB0E2DD01A13DA8E00609E26 /* MainVC.swift in Sources */,
+				AB0E2DEE1A13DCB000609E26 /* TableVC.swift in Sources */,
 				AB0E2DCE1A13DA8E00609E26 /* MapMyPlaces.xcdatamodeld in Sources */,
 				AB0E2DCB1A13DA8E00609E26 /* AppDelegate.swift in Sources */,
 			);
@@ -409,6 +413,7 @@
 				AB0E2DE91A13DA8E00609E26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB0E2DEA1A13DA8E00609E26 /* Build configuration list for PBXNativeTarget "MapMyPlacesTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				AB0E2DEC1A13DA8E00609E26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

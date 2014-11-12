@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MapMyPlaces
 //
-//  Created by Ashley Soucar on 11/12/14.
+//  Created by Ashley Soucar on 11/11/14.
 //  Copyright (c) 2014 asoucar. All rights reserved.
 //
 
