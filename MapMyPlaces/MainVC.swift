@@ -129,8 +129,6 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
                     
                     annotation.title = title
                     annotation.subtitle = "Added \(formattedDate)"
-                    println(annotation.title)
-                    println(annotation.subtitle)
                     self.myMap.addAnnotation(annotation)
                     
                     
