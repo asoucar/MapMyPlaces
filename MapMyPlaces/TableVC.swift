@@ -19,11 +19,11 @@ class TableVC: UITableViewController {
         super.viewDidLoad()
         
         //Fetch stored Locations from Core Data
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName:"Location")
         var error: NSError?
-        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]?
         if let results = fetchedResults {
             places = results
         } else {
@@ -62,11 +62,11 @@ class TableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
         //Label table view cells with the name of the Location
         let place = places[indexPath.row]
-        cell.textLabel.text = place.valueForKey("name") as String?
+        cell.textLabel!.text = place.valueForKey("name")as! String?
         
         return cell
     }

@@ -46,8 +46,8 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
         } else {
 
             //Get the position of the place from Core Data storage
-            let lat = places[activePlace].valueForKey("lat") as Double
-            let lon = places[activePlace].valueForKey("lon") as Double
+            let lat = places[activePlace].valueForKey("lat") as! Double
+            let lon = places[activePlace].valueForKey("lon") as! Double
             var latitude:CLLocationDegrees = lat
             var longitude:CLLocationDegrees = lon
             var latDelta:CLLocationDegrees = 0.01
@@ -62,12 +62,12 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
             //Create pin annotation with the location as the title
             //and with the formatted date added as the subtitle
             var annotation = MKPointAnnotation()
-            let dateAdded = places[activePlace].valueForKey("dateAdded") as NSDate
+            let dateAdded = places[activePlace].valueForKey("dateAdded") as! NSDate
             var formatter: NSDateFormatter = NSDateFormatter()
             formatter.dateFormat = "yyyy-MM-dd 'at' h:mm a"
             var formattedDate = formatter.stringFromDate(dateAdded)
             annotation.coordinate = location
-            annotation.title = places[activePlace].valueForKey("name") as String?
+            annotation.title = places[activePlace].valueForKey("name") as! String?
             annotation.subtitle = "Added \(formattedDate)"
             myMap.addAnnotation(annotation)
     
@@ -97,7 +97,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
                     println("Error: \(error)")
                 }
                 else {
-                    let p = CLPlacemark(placemark: placemarks?[0] as CLPlacemark)
+                    let p = CLPlacemark(placemark: placemarks?[0] as! CLPlacemark)
                     var subThoroughfare:String
                     var thoroughfare:String
                     
@@ -133,7 +133,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
                     
                     
                     //Store new Location to Core Data
-                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     let managedContext = appDelegate.managedObjectContext!
                     let entity =  NSEntityDescription.entityForName("Location", inManagedObjectContext: managedContext)
                     let newPlace = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
@@ -165,7 +165,7 @@ class MainVC: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
         
         //Find current user location
-        var userLocation:CLLocation = locations[0] as CLLocation
+        var userLocation:CLLocation = locations[0] as! CLLocation
         var latitude:CLLocationDegrees = userLocation.coordinate.latitude
         var longitude:CLLocationDegrees = userLocation.coordinate.longitude
         var latDelta:CLLocationDegrees = 0.01
